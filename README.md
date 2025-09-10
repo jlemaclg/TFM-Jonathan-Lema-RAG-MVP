@@ -3,7 +3,6 @@
 [![Python](https://img.shields.io/badge/Python-3.11+-blue.svg)](https://www.python.org/)
 [![FastAPI](https://img.shields.io/badge/FastAPI-0.115.0-green.svg)](https://fastapi.tiangolo.com/)
 [![Docker](https://img.shields.io/badge/Docker-Compose-blue.svg)](https://www.docker.com/)
-[![License](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 
 > **Sistema de Recuperación Aumentada Generativa (RAG) Empresarial** con arquitectura de microservicios, guardrails de privacidad PII, y orquestación inteligente.
 
@@ -17,7 +16,6 @@
 - [📖 Uso](#-uso)
 - [🧪 Testing](#-testing)
 - [🤝 Contribución](#-contribución)
-- [📄 Licencia](#-licencia)
 
 ## 🎯 Características
 
@@ -301,26 +299,15 @@ python -m ragas.evaluate \
 - **Tests**: Cobertura mínima del 80%
 - **Documentación**: Docstrings completos
 
-## 📄 Licencia
-
-Este proyecto está bajo la Licencia MIT - ver el archivo [LICENSE](LICENSE) para más detalles.
-
-## 🙏 Agradecimientos
-
-- **Microsoft Presidio** por la detección de PII
-- **ChromaDB** por el vector search
-- **FastAPI** por el framework web
-- **SentenceTransformers** por los modelos de embeddings
-
-## 📞 Soporte
-
-- **Issues**: [GitHub Issues](https://github.com/tu-usuario/agentic-rag-mvp/issues)
-- **Discussions**: [GitHub Discussions](https://github.com/tu-usuario/agentic-rag-mvp/discussions)
-- **Email**: soporte@agentic-rag-mvp.com
-
 ---
 
-⭐ **Si este proyecto te resulta útil, ¡dale una estrella en GitHub!**
+## � **Trabajo Fin de Máster - UNIR**
+
+Este proyecto ha sido desarrollado como parte del **Trabajo Fin de Máster (TFM)** en el **Máster Universitario en Inteligencia Artificial** de la **Universidad Internacional de La Rioja (UNIR)**.
+
+**Autor**: Jonathan Lema  
+**Fecha**: Septiembre 2025  
+**Programa**: Máster en Inteligencia Artificial - UNIR
 
 <div align="center">
   <img src="docs/architecture-diagram.png" alt="Arquitectura del Sistema" width="600"/>

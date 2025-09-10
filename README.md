@@ -307,7 +307,7 @@ Este proyecto ha sido desarrollado como parte del **Trabajo Fin de Máster (TFM)
 
 **Autor**: Jonathan Lema  
 **Fecha**: Septiembre 2025  
-**Programa**: Máster en Inteligencia Artificial - UNIR
+**Programa**: Máster en Ingeniería de Software y Sistemas informáticos - UNIR
 
 <div align="center">
   <img src="docs/architecture-diagram.png" alt="Arquitectura del Sistema" width="600"/>

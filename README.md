@@ -1,48 +1,57 @@
-﻿# 🤖 Agentic RAG MVP
+﻿# Sistema RAG Empresarial - Arquitectura de Microservicios
 
 [![Python](https://img.shields.io/badge/Python-3.11+-blue.svg)](https://www.python.org/)
 [![FastAPI](https://img.shields.io/badge/FastAPI-0.115.0-green.svg)](https://fastapi.tiangolo.com/)
-[![Docker](https://img.shields.io/badge/Docker-Compose-blue.svg)](https://www.docker.com/)
+[![Docker](https://img.shields.io/badge/Docker-Compose## Trabajo Fin de Master - UNIR
 
-> **Sistema de Recuperación Aumentada Generativa (RAG) Empresarial** con arquitectura de microservicios, guardrails de privacidad PII, y orquestación inteligente.
+Este proyecto ha sido desarrollado como parte del Trabajo Fin de Master (TFM) en el Master Universitario en Ingenieria de Software y Sistemas Informaticos de la Universidad Internacional de La Rioja (UNIR).
 
-## 📋 Tabla de Contenidos
+**Autor**: Jonathan Lema  
+**Fecha**: Septiembre 2025  
+**Programa**: Master en Ingenieria de Software y Sistemas Informaticos - UNIR  
+**Institucion**: Universidad Internacional de La Rioja (UNIR)
 
-- [🎯 Características](#-características)
-- [🏗️ Arquitectura](#️-arquitectura)
-- [🚀 Inicio Rápido](#-inicio-rápido)
-- [📦 Servicios](#-servicios)
-- [🔧 Instalación](#-instalación)
-- [📖 Uso](#-uso)
-- [🧪 Testing](#-testing)
-- [🤝 Contribución](#-contribución)
+Este trabajo representa la implementacion practica de conceptos avanzados en arquitectura de software, inteligencia artificial y sistemas distribuidos, aplicados a un caso de uso empresarial real.vg)](https://www.docker.com/)
 
-## 🎯 Características
+Sistema de Recuperacion Augmentada Generativa (RAG) empresarial con arquitectura de microservicios, guardrails de privacidad PII, y orquestacion inteligente.
 
-### 🔒 **Seguridad y Privacidad**
-- **Guardrails PII**: Detección y sanitización automática de datos personales usando Microsoft Presidio
-- **Autenticación JWT**: Sistema de roles jerárquicos (admin, moderator, user)
-- **Encriptación**: Comunicación segura entre servicios
+## Tabla de Contenidos
 
-### 🏗️ **Arquitectura Empresarial**
+- [Caracteristicas](#caracteristicas)
+- [Arquitectura](#arquitectura)
+- [Inicio Rapido](#inicio-rapido)
+- [Servicios](#servicios)
+- [Instalacion](#instalacion)
+- [Uso](#uso)
+- [Testing](#testing)
+- [Contribucion](#contribucion)
+
+## Caracteristicas
+
+### Seguridad y Privacidad
+- **Guardrails PII**: Deteccion y sanitizacion automatica de datos personales usando Microsoft Presidio
+- **Autenticacion JWT**: Sistema de roles jerarquicos (admin, moderator, user)
+- **Encriptacion**: Comunicacion segura entre servicios
+
+### Arquitectura Empresarial
 - **Microservicios desacoplados**: 6 servicios independientes con responsabilidades claras
-- **API Gateway**: Traefik como punto de entrada único
-- **Orquestación**: Agent-svc + MCP-server para coordinación inteligente
-- **Escalabilidad**: Diseño preparado para Kubernetes/Docker Swarm
+- **API Gateway**: Traefik como punto de entrada unico
+- **Orquestacion**: Agent-svc + MCP-server para coordinacion inteligente
+- **Escalabilidad**: Diseno preparado para Kubernetes/Docker Swarm
 
-### 📊 **Tecnologías Avanzadas**
-- **Vector Search**: ChromaDB para búsqueda semántica eficiente
-- **Embeddings**: Modelos E5 multilingüe para representaciones vectoriales
+### Tecnologias Avanzadas
+- **Vector Search**: ChromaDB para busqueda semantica eficiente
+- **Embeddings**: Modelos E5 multilingue para representaciones vectoriales
 - **LLM Integration**: OpenAI GPT-4o-mini con fallback local
 - **Storage**: MinIO S3-compatible + PostgreSQL para persistencia
 
-### 🔍 **Funcionalidades RAG**
-- **Retrieval Augmentation**: Búsqueda híbrida (semántica + BM25)
-- **Context Window Management**: Optimización automática del contexto
+### Funcionalidades RAG
+- **Retrieval Augmentation**: Busqueda hibrida (semantica + BM25)
+- **Context Window Management**: Optimizacion automatica del contexto
 - **Citation Tracking**: Referencias precisas a fuentes originales
-- **Feedback Loop**: Sistema de evaluación y mejora continua
+- **Feedback Loop**: Sistema de evaluacion y mejora continua
 
-## 🏗️ Arquitectura
+## Arquitectura
 
 ```mermaid
 graph TB
@@ -88,24 +97,24 @@ graph TB
     MCP --> AG
 ```
 
-### 🔄 **Flujo de Trabajo**
+### Flujo de Trabajo
 
-1. **📤 Upload**: Documentos subidos via files-svc → MinIO
-2. **🧹 Sanitize**: Detección PII con Presidio → Texto limpio
-3. **📚 Index**: Chunking + embeddings E5 → ChromaDB
-4. **🔍 Query**: Retrieval semántico + LLM → Respuesta contextual
-5. **📊 Feedback**: Evaluación de calidad → Mejora continua
+1. **Upload**: Documentos subidos via files-svc → MinIO
+2. **Sanitize**: Deteccion PII con Presidio → Texto limpio
+3. **Index**: Chunking + embeddings E5 → ChromaDB
+4. **Query**: Retrieval semantico + LLM → Respuesta contextual
+5. **Feedback**: Evaluacion de calidad → Mejora continua
 
-## 🚀 Inicio Rápido
+## Inicio Rapido
 
 ### Prerrequisitos
 
 - **Python 3.11+**
 - **Docker & Docker Compose**
 - **Git**
-- **4GB RAM mínimo** (recomendado 8GB+)
+- **4GB RAM minimo** (recomendado 8GB+)
 
-### Instalación Automática
+### Instalacion Automatica
 
 ```bash
 # Clonar repositorio
@@ -123,7 +132,7 @@ docker-compose up -d
 ./scripts/setup-all-services.sh
 ```
 
-### Verificación
+### Verificacion
 
 ```bash
 # Verificar servicios
@@ -135,18 +144,18 @@ curl http://localhost:8105/health  # rag-svc
 curl http://localhost:8106/health  # feedback-svc
 ```
 
-## 📦 Servicios
+## Servicios
 
-| Puerto | Servicio | Descripción | Tecnologías |
+| Puerto | Servicio | Descripcion | Tecnologias |
 |--------|----------|-------------|-------------|
-| **8101** | `auth-svc` | Autenticación JWT con roles | FastAPI, Jose, PostgreSQL |
-| **8102** | `files-svc` | Gestión de archivos | FastAPI, MinIO, Boto3 |
-| **8103** | `sanitize-svc` | Detección PII | FastAPI, Microsoft Presidio, SpaCy |
-| **8104** | `indexer-svc` | Indexación de documentos | FastAPI, ChromaDB, SentenceTransformers |
+| **8101** | `auth-svc` | Autenticacion JWT con roles | FastAPI, Jose, PostgreSQL |
+| **8102** | `files-svc` | Gestion de archivos | FastAPI, MinIO, Boto3 |
+| **8103** | `sanitize-svc` | Deteccion PII | FastAPI, Microsoft Presidio, SpaCy |
+| **8104** | `indexer-svc` | Indexacion de documentos | FastAPI, ChromaDB, SentenceTransformers |
 | **8105** | `rag-svc` | Consultas RAG | FastAPI, OpenAI, ChromaDB |
-| **8106** | `feedback-svc` | Recolección de feedback | FastAPI, PostgreSQL, SQLAlchemy |
+| **8106** | `feedback-svc` | Recoleccion de feedback | FastAPI, PostgreSQL, SQLAlchemy |
 
-## 🔧 Instalación Detallada
+## Instalacion
 
 ### 1. Clonar y Configurar
 
@@ -165,7 +174,7 @@ nano .env  # Configurar OPENAI_API_KEY, DB credentials, etc.
 # Levantar servicios base
 docker-compose up -d postgres minio chroma redis
 
-# Verificar que estén corriendo
+# Verificar que esten corriendo
 docker ps
 ```
 
@@ -183,19 +192,19 @@ cd ../feedback-svc && pip install -r requirements.txt
 # Levantar servicios (en terminales separadas)
 uvicorn services.auth-svc.app.main:app --reload --port 8101
 uvicorn services.files-svc.app.main:app --reload --port 8102
-# ... continuar con los demás
+# ... continuar con los demas
 ```
 
-### 4. Verificación Completa
+### 4. Verificacion Completa
 
 ```bash
-# Script de verificación
+# Script de verificacion
 ./scripts/health-check.sh
 ```
 
-## 📖 Uso
+## Uso
 
-### Autenticación
+### Autenticacion
 
 ```bash
 # Obtener token JWT
@@ -207,7 +216,7 @@ curl -X POST "http://localhost:8101/auth/login" \
 ### Subir Documento
 
 ```bash
-# Subir archivo con autenticación
+# Subir archivo con autenticacion
 curl -X POST "http://localhost:8102/files/upload" \
   -H "Authorization: Bearer YOUR_JWT_TOKEN" \
   -F "file=@document.pdf"
@@ -221,7 +230,7 @@ curl -X POST "http://localhost:8105/rag/query" \
   -H "Authorization: Bearer YOUR_JWT_TOKEN" \
   -H "Content-Type: application/json" \
   -d '{
-    "question": "¿Cómo funciona el sistema RAG?",
+    "question": "¿Como funciona el sistema RAG?",
     "top_k": 4,
     "sanitize_in": true,
     "sanitize_out": true
@@ -232,7 +241,7 @@ curl -X POST "http://localhost:8105/rag/query" \
 
 ```json
 {
-  "answer": "El sistema RAG funciona mediante recuperación de información relevante...",
+  "answer": "El sistema RAG funciona mediante recuperacion de informacion relevante...",
   "citations": [
     {
       "rank": 1,
@@ -240,15 +249,15 @@ curl -X POST "http://localhost:8105/rag/query" \
       "score": 0.87,
       "source": "manual-rag.pdf",
       "chunk_index": 0,
-      "preview": "El sistema RAG combina técnicas de recuperación..."
+      "preview": "El sistema RAG combina tecnicas de recuperacion..."
     }
   ],
-  "question_sanitized": "¿Cómo funciona el sistema RAG?",
+  "question_sanitized": "¿Como funciona el sistema RAG?",
   "latency_ms": 1250
 }
 ```
 
-## 🧪 Testing
+## Testing
 
 ### Tests Unitarios
 
@@ -256,12 +265,12 @@ curl -X POST "http://localhost:8105/rag/query" \
 # Ejecutar tests para todos los servicios
 pytest services/*/tests/
 
-# Tests específicos
+# Tests especificos
 pytest services/auth-svc/tests/test_auth.py -v
 pytest services/rag-svc/tests/test_rag.py -v
 ```
 
-### Tests de Integración
+### Tests de Integracion
 
 ```bash
 # Tests end-to-end
@@ -271,18 +280,18 @@ pytest services/rag-svc/tests/test_rag.py -v
 ./scripts/load-test.sh
 ```
 
-### Evaluación RAG
+### Evaluacion RAG
 
 ```bash
-# Usando RAGAS para evaluación automática
+# Usando RAGAS para evaluacion automatica
 python -m ragas.evaluate \
   --dataset test_dataset.json \
   --metrics answer_relevancy context_relevancy faithfulness
 ```
 
-## 🤝 Contribución
+## Contribucion
 
-¡Las contribuciones son bienvenidas! Por favor, lee nuestras [guías de contribución](CONTRIBUTING.md).
+Las contribuciones son bienvenidas. Por favor, lee nuestras guias de contribucion (CONTRIBUTING.md).
 
 ### Desarrollo Local
 
@@ -292,12 +301,12 @@ python -m ragas.evaluate \
 4. **Push** a la rama (`git push origin feature/AmazingFeature`)
 5. **Abre** un Pull Request
 
-### Estándares de Código
+### Estándares de Codigo
 
 - **Python**: PEP 8 con Black para formateo
 - **Commits**: Conventional Commits
-- **Tests**: Cobertura mínima del 80%
-- **Documentación**: Docstrings completos
+- **Tests**: Cobertura minima del 80%
+- **Documentacion**: Docstrings completos
 
 ---
 

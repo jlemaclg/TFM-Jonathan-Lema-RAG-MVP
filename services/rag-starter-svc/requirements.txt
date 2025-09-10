@@ -1,0 +1,10 @@
+fastapi==0.115.0
+uvicorn[standard]==0.30.0
+chromadb>=0.5
+sentence-transformers>=2.7
+openai>=1.45
+python-dotenv>=1.0
+ragas>=0.1.14
+trulens-eval>=0.30.0
+numpy>=1.26
+pandas>=2.2

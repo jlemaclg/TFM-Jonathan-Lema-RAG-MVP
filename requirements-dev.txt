@@ -1,0 +1,57 @@
+# Development Dependencies for Agentic RAG MVP
+# Install with: pip install -r requirements-dev.txt
+
+# Code Quality
+black>=23.0.0          # Code formatting
+isort>=5.12.0          # Import sorting
+flake8>=6.0.0          # Linting
+mypy>=1.0.0            # Type checking
+pre-commit>=3.0.0      # Git hooks
+
+# Testing
+pytest>=7.0.0          # Test framework
+pytest-cov>=4.0.0      # Coverage reporting
+pytest-asyncio>=0.21.0 # Async test support
+pytest-mock>=3.10.0    # Mocking support
+httpx>=0.24.0         # Async HTTP client for testing
+
+# Documentation
+mkdocs>=1.4.0         # Documentation generator
+mkdocs-material>=9.0.0 # Material theme for MkDocs
+
+# Development Tools
+jupyter>=1.0.0        # Jupyter notebooks
+ipykernel>=6.0.0      # Jupyter kernel for Python
+notebook>=6.5.0       # Jupyter notebook server
+
+# Environment Management
+python-dotenv>=1.0.0  # Environment variables
+
+# Database Testing
+psycopg2-binary>=2.9.0 # PostgreSQL adapter
+
+# Performance Testing
+locust>=2.15.0        # Load testing
+
+# Security
+bandit>=1.7.0         # Security linting
+safety>=2.3.0         # Dependency vulnerability scanning
+
+# API Testing
+requests>=2.31.0      # HTTP library
+newman>=5.3.0         # Postman collection runner (if using Postman)
+
+# Monitoring & Debugging
+rich>=13.0.0          # Rich text and beautiful formatting
+icecream>=2.1.0       # Debugging tool
+
+# Version Control
+gitpython>=3.1.0      # Git operations in Python
+
+# Container Development
+docker>=6.0.0         # Docker SDK for Python
+
+# Utilities
+click>=8.1.0          # Command line interface creation
+tqdm>=4.65.0          # Progress bars
+faker>=18.0.0         # Fake data generation for testing
